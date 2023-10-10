@@ -1,0 +1,279 @@
+:root {
+    --mainClr: #414141;
+    --secondaryClr: #70C05B;
+    --primaryClr: #FF6633;
+    --grayScale: #BFBFBF;
+    --grayLightest: #F3F2F1;
+    --grayHardest: #606060;
+    --bodyBG: #fbf8ec;
+    --onSurface: #232323;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: var(--surface, #FFF);
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+#menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 140px;
+    height: 44px;
+    font-size: 17px;
+    color: #fff;
+    background-color: var(--secondaryClr);
+    border: none;
+    border-radius: 5px;
+    margin: 0 20px 0 50px;
+    cursor: pointer;
+}
+.searchBox {
+    display: flex;
+    width: 360px;
+    height: 44px;
+    border: 1px solid var(--secondaryClr);
+    border-radius: 5px;
+    /* padding: 6px; */
+    margin: 0 25px 0 0;
+}
+.searchBox input {
+    width: 85%;
+    height: 100%;
+    font-size: 18px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+}
+.searchBox button {
+    width: 15%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+.likeBox, .headerBox, .cardBox {
+    font-size: 12px;
+    color: var(--mainClr);
+    text-align: center;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.userMenu {
+    display: flex;
+    align-items: center;
+    color: var(--onSurface);
+    margin: 0 0 0 50px;
+    cursor: pointer;
+}
+.userMenu img {
+    margin: 0 10px 0 0;
+}
+.userMenu .fa-chevron-down {
+    margin: 0 0 0 45px;
+}
+/* header end */
+
+
+
+main {
+    /* height: 100vh; */
+    background-color: rgba(251, 248, 236, .8);
+}
+.first-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 30px 0;
+}
+.first-list-item {
+    display: flex;
+    gap: 25px;
+}
+.first-list-item a, .fa-chevron-right {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mainClr);
+}
+.list-link {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--mainClr);
+    margin: 30px 0;
+}
+/* lists end */
+
+.hero {
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.hero-box {
+    max-width: 260px;
+}
+.hero-box input{
+    width: 260px;
+    height: 50px;
+    padding: 0 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background-color: var(--grayLightest);
+}
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 20px 0;
+}
+.remove {
+    width: 100px;
+    height: 35px;
+    border: none;
+    color: var(--grayHardest);
+    cursor: pointer;
+}
+.text-price {
+    width: 80px;
+    height: 35px;
+    color: var(--mainClr);
+    background-color: #fff;
+    padding: 11px 60px 11px 20px;
+    border: 1px solid var(--grayScale);
+    border-radius: 4px;
+}
+#price {
+    margin: 20px 0;
+}
+
+
+/* style from js */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 950px;
+    list-style: none;
+    gap: 31px;
+}
+.product-list li {
+    position: relative;
+    width: 295px;
+    height: 430px;
+    background-color: #fff;
+    padding: 15px;
+}
+.product-img {
+    /* position: absolute; */
+    width: 60%;
+    height: 46%;
+    margin: 0 0 0 50px;
+}
+.like-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+.like-btn:active {
+    background-color: var(--grayLightest);
+}
+.product-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--mainClr);
+    margin: 20px 0;
+}
+.product-name {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mainClr);
+}
+.fa-star {
+    color: var(--grayScale);
+    margin: 15px 0;
+}
+.card-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: var(--secondaryClr);
+    background: transparent;
+    border: 1px solid;
+    cursor: pointer;
+    transition: .5;
+}
+.card-btn:active {
+    color: #fff;
+    background-color: var(--primaryClr);
+    border-color: var(--primaryClr);
+}
+/* hero end */
+
+
+.numbers-wrapper button {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    color: var(--grayHardest);
+    background-color: var(--grayLightest);
+    border: none;
+    margin: 0 0 0 690px;
+    cursor: pointer;
+}
+.numbers {
+    font-size: 20px;
+    color: var(--grayHardest);
+    letter-spacing: 30px;
+    margin: 30px 0 60px 440px;
+}
+.numbers span {
+    color: var(--primaryClr);
+}
+/* numbers end */
+
+
+footer {
+    height: 180px;
+    background-image: url(./images/bg.png);
+    background-color: var(--bodyBG);
+    padding: 40px 0;
+}
+.footer-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    color: var(--mainClr);
+}
+.phone-num {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.phone-num a {
+    color: var(--mainClr);
+}
