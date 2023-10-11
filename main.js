@@ -1,3 +1,9 @@
+const search = document.querySelector('#search')
+const searchbtn = document.querySelector('#searchbtn')
+const value = document.querySelector(".text-price");
+const price = document.querySelector("#price");
+const list = document.querySelector('.product-list')
+
 const products = [ 
     {
         id: 1,
@@ -78,8 +84,6 @@ window.addEventListener('DOMContentLoaded', function() {
 })
 
 
-const search = document.querySelector('#search')
-const searchbtn = document.querySelector('#searchbtn')
 
 searchbtn.addEventListener('click', function() {
     let displayItems = products.map(function(item) {
@@ -105,9 +109,6 @@ searchbtn.addEventListener('click', function() {
 })
 
 
-const value = document.querySelector(".text-price");
-const price = document.querySelector("#price");
-const list = document.querySelector('.product-list')
 
 value.textContent = price.value
 price.addEventListener("input", (event) => {
