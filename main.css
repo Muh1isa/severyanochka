@@ -211,6 +211,7 @@ main {
 .fa-star {
     color: var(--grayScale);
     margin: 15px 0;
+    cursor: pointer;
 }
 .card-btn {
     width: 100%;
