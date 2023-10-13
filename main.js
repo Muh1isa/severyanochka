@@ -1,6 +1,6 @@
 const search = document.querySelector('#search')
 const searchbtn = document.querySelector('#searchbtn')
-const value = document.querySelector(".text-price");
+const valueT = document.querySelector(".text-price");
 const price = document.querySelector("#price");
 const list = document.querySelector('.product-list')
 
@@ -66,8 +66,8 @@ window.addEventListener('DOMContentLoaded', function() {
     let displayItems = products.map(function(item) {
         return `
         <li>
-        <img src="${item.img}" class="product-img">
-        <img src="${item.like}" class="like-btn">
+        <img src="${item.img}" alt="image" class="product-img">
+        <img src="${item.like}" alt="image" id="like" onclick="like()">
         <p class="product-price">${item.price}$</p>
         <h3 class="product-name">${item.desc}</h3>
         <i class="fa-solid fa-star" style="color: #ff6633"></i>
@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i><br>
-        <button class="card-btn">${item.btnText}</button>
+        <button class="cart-btn" onclick="Cart()">${item.btnText}</button>
         </li>
         ` 
     })
@@ -90,8 +90,8 @@ searchbtn.addEventListener('click', function() {
         if(search.value === item.name) {
             return `
             <li>
-            <img src="${item.img}" class="product-img">
-            <img src="${item.like}" class="like-btn">
+            <img src="${item.img}" alt="image" class="product-img">
+            <img src="${item.like}" alt="image" id="like" onclick="like()">
             <p class="product-price">${item.price}$</p>
             <h3 class="product-name">${item.desc}</h3>
             <i class="fa-solid fa-star" style="color: #ff6633"></i>
@@ -99,7 +99,7 @@ searchbtn.addEventListener('click', function() {
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i><br>
-            <button class="card-btn">${item.btnText}</button>
+            <button class="cart-btn" onclick="Cart()">${item.btnText}</button>
             </li>
             `  
         }
@@ -110,16 +110,16 @@ searchbtn.addEventListener('click', function() {
 
 
 
-value.textContent = price.value
+valueT.textContent = price.value
 price.addEventListener("input", (event) => {
-    value.textContent = event.target.value;
+    valueT.textContent = event.target.value;
     products.map(function(item) {
         // let newPrice = Math.round(item.price)
-        if(item.price > price.value) {
+        if(item.price >= price.value) {
             list.innerHTML = ` 
             <li>
-            <img src="${item.img}" class="product-img">
-            <img src="${item.like}" class="like-btn">
+            <img src="${item.img}" alt="image" class="product-img">
+            <img src="${item.like}" alt="image" id="like" onclick="like()">
             <p class="product-price">${item.price}$</p>
             <h3 class="product-name">${item.desc}</h3>
             <i class="fa-solid fa-star" style="color: #ff6633"></i>
@@ -127,9 +127,27 @@ price.addEventListener("input", (event) => {
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i><br>
-            <button class="card-btn">${item.btnText}</button>
+            <button class="cart-btn" onclick="Cart()">${item.btnText}</button>
             </li>
             `  
         }
     })
 });
+
+
+function like() {
+    // for (let i = 0; i < products.length; i++) {
+        // localStorage.setItem('product name', JSON.stringify(products[i].name))
+        // localStorage.getItem('product name')
+    // }
+    products.map(function(item) {
+        localStorage.setItem('product name', JSON.stringify(item.name))
+    })
+}
+
+
+function Cart() {
+    products.map(function(item) {
+        localStorage.setItem('cart product', JSON.stringify(item.name))
+    })
+}

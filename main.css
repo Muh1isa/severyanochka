@@ -187,7 +187,7 @@ main {
     height: 46%;
     margin: 0 0 0 50px;
 }
-.like-btn {
+#like {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -213,7 +213,7 @@ main {
     margin: 15px 0;
     cursor: pointer;
 }
-.card-btn {
+.cart-btn {
     width: 100%;
     height: 50px;
     font-size: 18px;
@@ -223,7 +223,7 @@ main {
     cursor: pointer;
     transition: .5;
 }
-.card-btn:active {
+.cart-btn:active {
     color: #fff;
     background-color: var(--primaryClr);
     border-color: var(--primaryClr);
